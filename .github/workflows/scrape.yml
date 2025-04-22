@@ -4,7 +4,7 @@ on:
   push:
   workflow_dispatch:
   schedule:
-  - cron: '2,28,52 * * * *'
+  - cron: '2,30,52 * * * *'
 
 permissions:
   contents: write
@@ -18,7 +18,7 @@ jobs:
     - name: Create scrape.sh if it doesn't exist
       run: |
         if [ ! -f "scrape.sh" ]; then
-          echo '#!/bin/bash' > scrape.sh
+          echo '#!/bin/bash' >> scrape.sh
           echo "./download.sh 'https://api.stats.fm/api/v1/artists/164850/top/listeners'" > scrape.sh
           chmod +x scrape.sh
           echo "Created scrape.sh"
