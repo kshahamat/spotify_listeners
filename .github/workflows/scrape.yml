@@ -23,7 +23,7 @@ jobs:
         if [ ! -f "scrape.sh" ]; then
           echo '#!/bin/bash' > scrape.sh
           if [[ "$REPO_DESC" == http://* ]] || [[ "$REPO_DESC" == https://* ]]; then
-            echo "./download.sh '$REPO_DESC'" >> scrape.sh
+            echo "./download.sh 'https://api.stats.fm/api/v1/artists/164850/top/listeners'" >> scrape.sh
           else
             echo "# ./download.sh 'https://www.example.com/'" >> scrape.sh
           fi
