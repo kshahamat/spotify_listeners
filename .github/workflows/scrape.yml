@@ -22,7 +22,7 @@ jobs:
           if [[ "$REPO_DESC" == http://* ]] || [[ "$REPO_DESC" == https://* ]]; then
             echo "./download.sh 'https://api.stats.fm/api/v1/artists/164850/top/listeners'" >> scrape.sh
           else
-            echo "# ./download.sh 'https://www.example.com/'" >> scrape.sh
+            echo "# ./download.sh 'https://api.stats.fm/api/v1/artists/164850/top/listeners'" >> scrape.sh
           fi
           chmod +x scrape.sh
           echo "Created scrape.sh"
@@ -30,7 +30,7 @@ jobs:
           echo -e "# Scheduled scraper\n\nFor $REPO_DESC" > README.md 
         fi
       env:
-        REPO_DESC: ${{ github.event.repository.description }}
+        REPO_DESC: ${{ 'https://api.stats.fm/api/v1/artists/164850/top/listeners' }}
     # Uncomment to use Python:
     # - name: Set up Python 3.13
     #   uses: actions/setup-python@v5
