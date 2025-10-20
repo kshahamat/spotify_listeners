@@ -1,7 +1,7 @@
 # Scrape
 
 Scrape is an automated data collection workflow powered by GitHub Actions.  
-It periodically executes a shell script (`scrape.sh`) to scrape or fetch data from a specified API endpoint and commits the results back to the repository automatically.
+It periodically executes a shell script (`scrape.sh`) to scrape or fetch data from a Spotifies real-time updated listening data analytics and commits the results back to the repository automatically.
 
 ---
 
